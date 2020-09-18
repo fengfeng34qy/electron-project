@@ -7,7 +7,7 @@
 <script>
   export default {
     name: 'electron-project'
-  }
+  };
 </script>
 
 <style>

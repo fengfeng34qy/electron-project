@@ -7,9 +7,9 @@ export default [
         accelerator: 'CmdOrCtrl+Z',
         // role: 'undo',
         click: function (item, focusedWindow) {
-          focusedWindow.reload()
+          focusedWindow.reload();
         }
       }
     ]
   }
-]
+];

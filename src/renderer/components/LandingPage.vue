@@ -1,5 +1,13 @@
 <template>
   <div id="wrapper">
+    <swiper ref="mySwiper" :options="swiperOptions">
+      <swiper-slide>Slide 1</swiper-slide>
+      <swiper-slide>Slide 2</swiper-slide>
+      <swiper-slide>Slide 3</swiper-slide>
+      <swiper-slide>Slide 4</swiper-slide>
+      <swiper-slide>Slide 5</swiper-slide>
+      <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
     <img id="logo" src="~@/assets/logo.png" alt="electron-vue">
     <main>
       <div class="left-side">
@@ -30,17 +38,32 @@
 </template>
 
 <script>
-  import SystemInformation from './LandingPage/SystemInformation'
+  import SystemInformation from './LandingPage/SystemInformation';
 
   export default {
     name: 'landing-page',
+    data () {
+      return {
+        swiperOptions: {
+          pagination: {
+            el: '.swiper-pagination'
+          }
+          // Some Swiper option/callback...
+        }
+      };
+    },
+    computed: {
+      swiper () {
+        return this.$refs.mySwiper.$swiper;
+      }
+    },
     components: { SystemInformation },
     methods: {
       open (link) {
-        this.$electron.shell.openExternal(link)
+        this.$electron.shell.openExternal(link);
       }
     }
-  }
+  };
 </script>
 
 <style>
