@@ -147,6 +147,9 @@ let rendererConfig = {
       '@': path.join(__dirname, '../src/renderer'),
       'vue$': 'vue/dist/vue.esm.js'
     },
+    modules: [
+      path.resolve(__dirname, '../src/renderer/agree-sdk'),
+    ],
     extensions: ['.js', '.vue', '.json', '.css', '.node']
   },
   target: 'electron-renderer'
